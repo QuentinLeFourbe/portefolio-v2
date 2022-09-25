@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import RemoveIcon from "@material-ui/icons/Remove";
 import { useTransition, useSpring, animated, config } from "react-spring";
 
 const TitleContainer = styled(animated.div)`

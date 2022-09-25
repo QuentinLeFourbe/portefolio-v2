@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import { animated } from 'react-spring'
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { animated } from "react-spring";
 
 const Container = styled(animated.div)`
   display: inline-block;
@@ -24,38 +24,43 @@ const Container = styled(animated.div)`
     animation-delay: -0.45s;
   }
   & div:nth-child(2) {
-   animation-delay: -0.3s;
+    animation-delay: -0.3s;
   }
   & div:nth-child(3) {
-   animation-delay: -0.15s;
-  } 
+    animation-delay: -0.15s;
+  }
 
   @keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 `;
 
 function LoadingSpin(props) {
   const { style, hideLoading, loadingState } = props;
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(async () => {
-    if (loadingState == false) {
-      await new Promise(r => setTimeout(r, 500));
-      setIsLoading(false);
-      await new Promise(r => setTimeout(r, 500));
-      hideLoading();
-    }
-  })
+  // useEffect(async () => {
+  //   if (loadingState == false) {
+  //     await new Promise(r => setTimeout(r, 500));
+  //     setIsLoading(false);
+  //     await new Promise(r => setTimeout(r, 500));
+  //     hideLoading();
+  //   }
+  // })
 
   return (
-    <Container style={style}><div></div><div></div><div></div><div></div></Container>
-  )
+    <Container style={style}>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </Container>
+  );
 }
 
-export default LoadingSpin
+export default LoadingSpin;

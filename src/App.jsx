@@ -3,6 +3,10 @@ import ContentFromRoute from "./components/Base/ContentFromRoute";
 import { AppContext } from "./AppContext";
 import { dataReducer } from "./Reducers/Reducers";
 
+const initialData = {
+  isAppLoading: true,
+};
+
 function App() {
   const [data, dispatch] = useReducer(dataReducer, initialData);
 
