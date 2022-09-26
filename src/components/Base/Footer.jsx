@@ -73,7 +73,6 @@ function Footer() {
     <VisiblitySensor onChange={onChangeVisibility} partialVisibility>
       <Container>
         <AnimatedContent
-          style={springProps}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >

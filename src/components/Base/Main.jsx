@@ -23,10 +23,6 @@ function Main() {
     <Container>
       <TitleSeparator title="Qui suis-je ?" delay={0} />
       <Presentation />
-      <Element name="cv">
-        <TitleSeparator title="Expériences" delay={1500} visibility={true} />
-        <Experiences />
-      </Element>
 
       <Element name="skills">
         <TitleSeparator title="Compétences" />

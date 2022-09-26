@@ -1,0 +1,12 @@
+/* Webfont: Maiah-Bold */@font-face {
+    font-family: 'Maiah2';
+    src: url('Maiah-Bold.eot'); /* IE9 Compat Modes */
+    src: url('Maiah-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Maiah-Bold.woff') format('woff'), /* Modern Browsers */
+         url('Maiah-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Maiah-Bold.svg#Maiah-Bold') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+

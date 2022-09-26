@@ -1,0 +1,12 @@
+/* Webfont: Maiah-Thin */@font-face {
+    font-family: 'Maiah';
+    src: url('Maiah-Thin.eot'); /* IE9 Compat Modes */
+    src: url('Maiah-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Maiah-Thin.woff') format('woff'), /* Modern Browsers */
+         url('Maiah-Thin.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Maiah-Thin.svg#Maiah-Thin') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

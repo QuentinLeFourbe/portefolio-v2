@@ -16,7 +16,7 @@ const TitleContainer = styled(animated.div)`
 
   padding: 1rem;
   ${(props) => (props.rightSide ? "padding-right: 5vw;" : "padding-left: 5vw;")}
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
 
   @media (max-width: 768px) {

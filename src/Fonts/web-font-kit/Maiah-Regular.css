@@ -1,0 +1,12 @@
+/* Webfont: Maiah-Regular */@font-face {
+    font-family: 'Maiah3';
+    src: url('Maiah-Regular.eot'); /* IE9 Compat Modes */
+    src: url('Maiah-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Maiah-Regular.woff') format('woff'), /* Modern Browsers */
+         url('Maiah-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Maiah-Regular.svg#Maiah-Regular') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
