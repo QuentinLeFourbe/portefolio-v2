@@ -14,7 +14,7 @@ const Container = styled(animated(Link))`
   padding: 1rem;
   text-decoration: none;
   font-size: 3rem;
-  font-family: "Times New Roman", Times, serif;
+  /* font-family: "Times New Roman", Times, serif; */
   cursor: pointer;
 
   @media (max-width: 1425px) {

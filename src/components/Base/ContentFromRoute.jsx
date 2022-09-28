@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-import Main from "./Main";
+import Main from "../../views/Main";
 import Header from "./Header";
 import Footer from "./Footer";
 import About from "./About";

@@ -11,7 +11,7 @@ import { AppContext } from "../../../AppContext";
 import { animateScroll as scroll } from "react-scroll";
 
 const Container = styled.a`
-  font-family: "Times New Roman", Times, serif;
+  /* font-family: "Times New Roman", Times, serif; */
   cursor: pointer;
 
   font-size: 6rem;
@@ -31,7 +31,7 @@ const Container = styled.a`
     font-size: 3.5rem;
   }
   text-decoration: none;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: black;
 `;
 

@@ -4,27 +4,21 @@ import { useSpring, animated, config } from "react-spring";
 import VisiblitySensor from "react-visibility-sensor";
 
 const Container = styled(animated.footer)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-area: footer;
   min-height: 20vh;
-  /* border-top: solid 1px #18534F; */
+  /* border-top: solid 1px #18534f; */
   overflow: hidden;
   /* background-color: #18534F; */
   margin-top: 15vh;
 `;
 
-const AnimatedContent = styled(animated.div)`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #18534f;
-  width: 100%;
-  height: 100%;
-`;
-
 const MailLink = styled(animated.a)`
   font-family: "Times New Roman", Times, serif;
-  color: white;
+  color: #18534f;
+
   margin: 1rem;
   padding: 0.5rem;
   font-size: 3rem;
@@ -33,27 +27,23 @@ const MailLink = styled(animated.a)`
   }
 
   text-decoration: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    border: 1px solid black;
+    z-index: -1;
+    width: 350px;
+    height: 50px;
+  }
 `;
 
 function Footer() {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
-  const springProps = useSpring({
-    from: {
-      y: 100,
-      opacity: 0,
-    },
-    y: isVisible ? 0 : 100,
-    opacity: isVisible ? 1 : 0,
-    config: config.molasses,
-  });
-
   const hoverSpring = useSpring({
-    backgroundColor: isHovered ? "#ECF8F6" : "#18534F",
-    color: isHovered ? "#18534F" : "#ECF8F6",
-    borderRadius: isHovered ? 20 : 10,
-    y: isHovered ? -10 : 0,
+    y: isHovered ? 2 : 0,
     config: config.wobbly,
   });
 
@@ -70,18 +60,16 @@ function Footer() {
   };
 
   return (
-    <VisiblitySensor onChange={onChangeVisibility} partialVisibility>
-      <Container>
-        <AnimatedContent
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        >
-          <MailLink href="mailto:quentingarcia40@gmail.com" style={hoverSpring}>
-            Contactez-moi !
-          </MailLink>
-        </AnimatedContent>
-      </Container>
-    </VisiblitySensor>
+    <Container>
+      <MailLink
+        href="mailto:quentingarcia40@gmail.com"
+        style={hoverSpring}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        Contactez-moi !
+      </MailLink>
+    </Container>
   );
 }
 

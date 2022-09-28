@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import { animated } from "react-spring";
-import Presentation from "../CV/Presentation";
-import Skills from "../CV/Skills";
-import Experiences from "../CV/Experiences";
-import TitleSeparator from "../CV/TitleSeparator";
-import Projets from "../CV/Projets";
+import TitleSeparator from "../components/CV/TitleSeparator";
+import Projets from "../components/CV/Projets";
 import { Element } from "react-scroll";
+import WhoAmICard from "./Cards/WhoAmICard";
+import SkillsCard from "./Cards/SkillsCard";
 
 const Container = styled(animated.div)`
-  grid-area: main;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   margin: 0;
+  padding-top: 10vh;
   /* display: grid;
     grid-template-columns: 1fr 5vw 1fr;
     grid-template-rows: auto;
@@ -21,13 +23,8 @@ const Container = styled(animated.div)`
 function Main() {
   return (
     <Container>
-      <TitleSeparator title="Qui suis-je ?" delay={0} />
-      <Presentation />
-
-      <Element name="skills">
-        <TitleSeparator title="Compétences" />
-        <Skills />
-      </Element>
+      <WhoAmICard />
+      <SkillsCard />
       <Element name="projects">
         <TitleSeparator title="Projets" />
         <Projets />
