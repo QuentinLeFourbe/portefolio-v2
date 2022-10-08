@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { animated } from "react-spring";
-import TitleSeparator from "../components/CV/TitleSeparator";
-import Projets from "../components/CV/Projets";
 import { Element } from "react-scroll";
-import WhoAmICard from "./Cards/WhoAmICard";
-import SkillsCard from "./Cards/SkillsCard";
+import WhoAmICard from "../Organisms/WhoAmICard";
+import SkillsCard from "../Organisms/SkillsCard";
+import CVCard from "../Organisms/CVCard";
+import ContactCard from "../Organisms/ContactCard";
+import Title from "../Atoms/Title";
 
 const Container = styled(animated.div)`
   display: flex;
@@ -25,10 +26,8 @@ function Main() {
     <Container>
       <WhoAmICard />
       <SkillsCard />
-      <Element name="projects">
-        <TitleSeparator title="Projets" />
-        <Projets />
-      </Element>
+      <CVCard />
+      <ContactCard />
     </Container>
   );
 }

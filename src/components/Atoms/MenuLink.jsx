@@ -7,7 +7,8 @@ import {
   useTransition,
   useTrail,
 } from "react-spring";
-import { AppContext } from "../../../AppContext";
+// import { Link } from 'react-router-dom'
+import { AppContext } from "../../AppContext";
 import { Link } from "react-scroll";
 
 const Container = styled(animated(Link))`
@@ -17,14 +18,17 @@ const Container = styled(animated(Link))`
   /* font-family: "Times New Roman", Times, serif; */
   cursor: pointer;
 
+  &.active {
+    color: #ffca08;
+  }
+
   @media (max-width: 1425px) {
     font-size: 2.5rem;
   }
 `;
 
-function HeaderLink(props) {
-  const { to, children } = props;
-  const { dataDispatch } = useContext(AppContext);
+function MenuLink(props) {
+  const { to, children, hideMenu } = props;
   const [isHover, setIsHover] = useState(false);
   const [isTriggered, setIsTriggered] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -41,7 +45,7 @@ function HeaderLink(props) {
   });
 
   const colorSpring = useSpring({
-    color: isTriggered || isActive ? "#ffca08" : "black",
+    color: isTriggered || isActive ? "#ffca08" : "white",
     config: config.tight,
   });
 
@@ -61,13 +65,8 @@ function HeaderLink(props) {
     setIsActive(false);
   };
 
-  const activateLoading = () => {
-    dataDispatch({ type: "APP_LOADING" });
-  };
-
   useEffect(() => {
     if (!true) {
-      //TODO ????????
       return;
     }
 
@@ -80,19 +79,8 @@ function HeaderLink(props) {
   }, [isHover, timing]);
 
   return (
-    // <Container
-    //     to={to}
-    //     onMouseEnter={hover}
-    //     onMouseLeave={notHover}
-    //     onClick={activateLoading}
-    //     style={springStyle}
-    // >
-    //     {children}
-    // </Container>
-
     <Container
-      // activeClass="active"
-      // className="active"
+      onClick={hideMenu}
       onSetActive={linkActive}
       onSetInactive={linkInactive}
       spy={true}
@@ -109,4 +97,4 @@ function HeaderLink(props) {
   );
 }
 
-export default HeaderLink;
+export default MenuLink;

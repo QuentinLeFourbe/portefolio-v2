@@ -7,7 +7,7 @@ import {
   useTransition,
   useTrail,
 } from "react-spring";
-import MenuLink from "./MenuLink";
+import MenuLink from "../Atoms/MenuLink";
 import {
   disableBodyScroll,
   enableBodyScroll,

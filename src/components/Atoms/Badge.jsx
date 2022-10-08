@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { animated, useTransition, config } from "react-spring";
 
-const SkillContainer = styled(animated.div)`
+const Container = styled(animated.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,9 +117,8 @@ function Badge({ imageSrc, text, alt }) {
       window.clearTimeout(timeoutId);
     };
   }, [minToggleWaiting]);
-  console.log({ imageSrc });
   return (
-    <SkillContainer onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+    <Container onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
       {IconTransition((styles, isToggled) =>
         isToggled ? (
           <animated.div style={{ position: "absolute", ...styles }}>
@@ -129,7 +128,7 @@ function Badge({ imageSrc, text, alt }) {
           <Icon src={imageSrc} alt={alt} style={styles} />
         )
       )}
-    </SkillContainer>
+    </Container>
   );
 }
 

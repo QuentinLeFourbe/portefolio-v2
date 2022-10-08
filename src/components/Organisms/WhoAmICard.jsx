@@ -1,6 +1,6 @@
 import React from "react";
-import AnimatedText from "../../components/AnimatedText";
-import Card from "../../components/Card";
+import AnimatedText from "../Atoms/AnimatedText";
+import Card from "../Molecules/Card";
 
 const texts = [
   "Je m'appelle Quentin GARCIA, je suis un développeur passionné ayant un bagage technique varié. Passant de la VR au développement C# en client lourd, je suis aujourd'hui développeur React.js / Node.js",

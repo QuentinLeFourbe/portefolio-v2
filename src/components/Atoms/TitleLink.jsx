@@ -7,7 +7,7 @@ import {
   useTransition,
   useTrail,
 } from "react-spring";
-import { AppContext } from "../../../AppContext";
+import { AppContext } from "../../AppContext";
 import { animateScroll as scroll } from "react-scroll";
 
 const Container = styled.a`

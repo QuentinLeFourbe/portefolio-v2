@@ -7,13 +7,11 @@ import ReactIcon from "../../images/icon_react.svg";
 import NodeIcon from "../../images/icon_node.svg";
 import JsIcon from "../../images/icon_js.svg";
 import { useTrail, animated, config } from "react-spring";
-import Card from "../../components/Card";
-import Badge from "../../components/Badge";
+import Card from "../Molecules/Card";
+import Badge from "../Atoms/Badge";
 
 const Grid = styled.div`
   display: grid;
-  margin-left: 8vw;
-  margin-right: 8vw;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
   /* This is better for small screens, once min() is better supported */
   /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
@@ -73,9 +71,8 @@ function SkillsCard(props) {
     <Card title="Compétences">
       <Grid>
         {skillsTrail.map((styles, i) => (
-          <animated.div style={styles}>
+          <animated.div style={styles} key={i}>
             <Badge
-              key={i}
               imageSrc={cards[i].image}
               alt={cards[i].altImage}
               text={cards[i].text}

@@ -1,13 +1,10 @@
 import React, { useEffect, useContext, useState } from "react";
-import Main from "../../views/Main";
-import Header from "./Header";
-import Footer from "./Footer";
-import About from "./About";
-import LoadingComponent from "./Loading/LoadingComponent";
-import ScrollToTop from "./ScrollToTop";
+import Main from "./Main";
+import LoadingComponent from "../Molecules/LoadingComponent";
+import ScrollToTop from "../Atoms/ScrollToTop";
 import { AppContext } from "../../AppContext";
 import styled from "styled-components";
-import { useSpring, animated, config, useTransition } from "react-spring";
+import Header from "../Organisms/Header";
 
 const Container = styled.div`
   position: absolute;
@@ -40,7 +37,6 @@ function ContentFromRoute() {
         <>
           <ScrollToTop />
           <Main />
-          <Footer />
         </>
       )}
     </Container>

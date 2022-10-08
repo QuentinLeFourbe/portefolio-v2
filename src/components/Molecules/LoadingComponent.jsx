@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import styled from "styled-components";
 import { useSpring, animated, config, useTransition } from "react-spring";
-import LoadingSpin from "./LoadingSpin";
-import { AppContext } from "../../../AppContext";
+import LoadingSpin from "../Atoms/LoadingSpin";
+import { AppContext } from "../../AppContext";
 
 const Container = styled.div`
   display: flex;

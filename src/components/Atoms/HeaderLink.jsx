@@ -7,8 +7,7 @@ import {
   useTransition,
   useTrail,
 } from "react-spring";
-// import { Link } from 'react-router-dom'
-import { AppContext } from "../../../AppContext";
+import { AppContext } from "../../AppContext";
 import { Link } from "react-scroll";
 
 const Container = styled(animated(Link))`
@@ -18,17 +17,14 @@ const Container = styled(animated(Link))`
   /* font-family: "Times New Roman", Times, serif; */
   cursor: pointer;
 
-  &.active {
-    color: #ffca08;
-  }
-
   @media (max-width: 1425px) {
     font-size: 2.5rem;
   }
 `;
 
-function MenuLink(props) {
-  const { to, children, hideMenu } = props;
+function HeaderLink(props) {
+  const { to, children } = props;
+  const { dataDispatch } = useContext(AppContext);
   const [isHover, setIsHover] = useState(false);
   const [isTriggered, setIsTriggered] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -45,7 +41,7 @@ function MenuLink(props) {
   });
 
   const colorSpring = useSpring({
-    color: isTriggered || isActive ? "#ffca08" : "white",
+    color: isTriggered || isActive ? "#ffca08" : "black",
     config: config.tight,
   });
 
@@ -65,8 +61,13 @@ function MenuLink(props) {
     setIsActive(false);
   };
 
+  const activateLoading = () => {
+    dataDispatch({ type: "APP_LOADING" });
+  };
+
   useEffect(() => {
     if (!true) {
+      //TODO ????????
       return;
     }
 
@@ -79,8 +80,19 @@ function MenuLink(props) {
   }, [isHover, timing]);
 
   return (
+    // <Container
+    //     to={to}
+    //     onMouseEnter={hover}
+    //     onMouseLeave={notHover}
+    //     onClick={activateLoading}
+    //     style={springStyle}
+    // >
+    //     {children}
+    // </Container>
+
     <Container
-      onClick={hideMenu}
+      // activeClass="active"
+      // className="active"
       onSetActive={linkActive}
       onSetInactive={linkInactive}
       spy={true}
@@ -97,4 +109,4 @@ function MenuLink(props) {
   );
 }
 
-export default MenuLink;
+export default HeaderLink;

@@ -7,11 +7,10 @@ import {
   useTransition,
   useTrail,
 } from "react-spring";
-import TitleLink from "./Header/TitleLink";
-import HeaderLink from "./Header/HeaderLink";
+import TitleLink from "../Atoms/TitleLink";
+import HeaderLink from "../Atoms/HeaderLink";
 import { useMediaQuery } from "../../Hooks/useMediaQuery";
-import MenuLink from "./Header/MenuLink";
-import MobileMenu from "./Header/MobileMenu";
+import MobileMenu from "../Molecules/MobileMenu";
 
 const Container = styled(animated.header)`
   box-sizing: border-box;

@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
-import ContentFromRoute from "./components/Base/ContentFromRoute";
 import { AppContext } from "./AppContext";
+import ContentFromRoute from "./components/Pages/ContentFromRoute";
 import { dataReducer } from "./Reducers/Reducers";
 
 const initialData = {
