@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import { animated } from "react-spring";
-import { Element } from "react-scroll";
 import WhoAmICard from "../Organisms/WhoAmICard";
 import SkillsCard from "../Organisms/SkillsCard";
 import CVCard from "../Organisms/CVCard";
 import ContactCard from "../Organisms/ContactCard";
-import Title from "../Atoms/Title";
 
 const Container = styled(animated.div)`
   display: flex;
